@@ -1,0 +1,29 @@
+server:
+  port: 8081
+
+management:
+  endpoint:
+    health:
+      enabled: true
+
+
+spring:
+  application:
+    name: auth-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://120.27.218.194:3306/authservice?useSSL=false&characterEncoding=utf-8&serverTimezone=UTC&useTimezone=true&allowMultiQueries=true
+    username: root
+    password: xing0125
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 10
+    prefer-ip-address: true
+  client:
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://120.27.218.194:9090/eureka
+
